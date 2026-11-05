@@ -21,47 +21,16 @@ output_file = f"./models/model_C={C}.bin"
 url = "https://raw.githubusercontent.com/DataTalksClub/machine-learning-zoomcamp/main/cohorts/2026/data/course_lead_scoring_2026.csv"
 df_main = pd.read_csv(url)
 
-# df.columns = df.columns.str.lower().str.replace(" ", "_")
-
-# categorical_columns = list(df.dtypes[df.dtypes == "object"].index)
-
-# for c in categorical_columns:
-#     df[c] = df[c].str.lower().str.replace(" ", "_")
-
-# df.totalcharges = pd.to_numeric(df.totalcharges, errors="coerce")
-# df.totalcharges = df.totalcharges.fillna(0)
-
-# df.churn = (df.churn == "yes").astype(int)
-
-# df_full_train, df_test = train_test_split(df, test_size=0.2, random_state=1)
-
-
-# numerical = ["tenure", "monthlycharges", "totalcharges"]
-
-# categorical = [
-#     "gender",
-#     "seniorcitizen",
-#     "partner",
-#     "dependents",
-#     "phoneservice",
-#     "multiplelines",
-#     "internetservice",
-#     "onlinesecurity",
-#     "onlinebackup",
-#     "deviceprotection",
-#     "techsupport",
-#     "streamingtv",
-#     "streamingmovies",
-#     "contract",
-#     "paperlessbilling",
-#     "paymentmethod",
-# ]
+df_main.columns = df_main.columns.str.lower().str.replace(" ", "_")
 
 categorical = list(
     df_main.select_dtypes(include=["object", "category", "string"]).columns
 )
 numerical = list(df_main.select_dtypes(include="number").columns)
 del numerical[-1]
+
+for c in categorical:
+    df_main[c] = df_main[c].str.lower().str.replace(" ", "_")
 
 # Handle missing values
 df_main[categorical] = df_main[categorical].fillna("NA")
