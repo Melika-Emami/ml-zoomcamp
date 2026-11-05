@@ -1,0 +1,16 @@
+[project]
+name = ""
+description = ""
+requires-python = ">=3.11"
+version = "2.0.0"
+
+[tool.pyrefly]
+project-includes = [
+    "**/*.py*",
+    "**/*.ipynb",
+]
+
+search_path = ["app"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["config", "package"]
