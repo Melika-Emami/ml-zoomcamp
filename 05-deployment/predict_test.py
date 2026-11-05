@@ -1,4 +1,4 @@
-import requests
+import requests  # type: ignore[import-untyped]
 
 url = "http://localhost:9696/predict"
 customer = {
