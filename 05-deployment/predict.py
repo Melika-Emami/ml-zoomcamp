@@ -15,7 +15,7 @@ def predict():
 
     customer = dv.transform(customer)
     y_pred = model.predict_proba(customer)[:, -1]
-
+    y_pred = float(y_pred[0])
     decision = y_pred >= 0.5
 
     result = {"conversion_prob": float(y_pred), "Converted": bool(decision)}
