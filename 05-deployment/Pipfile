@@ -11,6 +11,8 @@ requests = "*"
 waitress = "*"
 
 [dev-packages]
+awsebcli = "*"
+botocore = {extras = ["crt"], version = "*"}
 
 [requires]
 python_version = "3.12"

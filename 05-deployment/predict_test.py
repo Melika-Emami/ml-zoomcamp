@@ -1,6 +1,8 @@
 import requests  # type: ignore[import-untyped]
 
-url = "http://localhost:9696/predict"
+aws_host = "churn-lab.eba-xgnepixu.eu-west-2.elasticbeanstalk.com"
+local_host = "localhost:9696"
+url = f"http://{local_host}/predict"
 customer = {
     "lead_source": "social_media",
     "industry": "healthcare",
