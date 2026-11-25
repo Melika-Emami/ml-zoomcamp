@@ -1,6 +1,6 @@
 # Machine Learning Zoomcamp
 
-My coursework for [DataTalksClub’s Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp), completed through **Module 06 — Decision Trees and Ensemble Learning**.
+My coursework for [DataTalksClub’s Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp), completed through **Module 08 — Neural Networks and Deep Learning**.
 
 - **01 — Introduction to Machine Learning:** ML fundamentals and the model development workflow.
 - **02 — Regression:** Training and evaluating models for numerical predictions.
