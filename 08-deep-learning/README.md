@@ -20,4 +20,7 @@ Run training and evaluation on the CPU to reproduce the grading baseline.
 
 ## Training
 
-The baseline resizes images to 200 × 200, applies ImageNet normalization, and trains for 10 epochs with `BCEWithLogitsLoss`. After each epoch, the model is evaluated on the held-out split. Training and evaluation loss and accuracy are saved to `history_baseline.json`.
+- **Baseline (10 epochs).** Resize images to `200 × 200`, apply ImageNet normalization, and train with `BCEWithLogitsLoss`. Metrics are saved to `history_baseline.json`.
+- **Augmentation (10 additional epochs).** Continue training the baseline model with random rotations up to 50°, random resized crops, and horizontal flips on the training images. Metrics for these 10 epochs are saved to `history_augmented.json`.
+
+Both phases record training and held-out loss and accuracy after each epoch. The held-out images use the baseline transform throughout.
